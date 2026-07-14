@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>김수진 | 퍼포먼스 마케터 포트폴리오</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap');
+
+:root {
+  --ink: #0f1923;
+  --ink-2: #2d3a4a;
+  --ink-3: #5a6a7e;
+  --bg: #f7f8fa;
+  --bg-2: #eef1f6;
+  --white: #ffffff;
+  --line: #dde2ea;
+  --blue: #1d5fdb;
+  --blue-light: #e8effe;
+  --teal: #0b8f7e;
+  --teal-light: #e2f5f3;
+  --amber: #c4780a;
+  --rose: #b83838;
+  --accent: #1d5fdb;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'IBM Plex Sans KR', 'Apple SD Gothic Neo', sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+/* ── NAV ── */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(15,25,35,0.96);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  gap: 0;
+  padding: 0 40px;
+  height: 52px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+nav .nav-name {
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  margin-right: auto;
+}
+nav a {
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+  font-size: 13px;
+  padding: 0 14px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+nav a:hover { color: #fff; }
+nav .nav-dot {
+  display: inline-block;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+nav .dot-blue { background: var(--blue); }
+nav .dot-teal { background: var(--teal); }
+
+/* ── HERO ── */
+.hero {
+  background: linear-gradient(150deg, #0b1525 0%, #0f2240 55%, #0b3a36 100%);
+  padding: 72px 40px 64px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 70% 60% at 80% 40%, rgba(29,95,219,0.12), transparent),
+              radial-gradient(ellipse 50% 80% at 10% 80%, rgba(11,143,126,0.10), transparent);
+}
+.hero-inner { max-width: 960px; margin: 0 auto; position: relative; }
+.hero-tag {
+  display: inline-block;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  color: rgba(255,255,255,0.45);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.hero h1 {
+  font-size: clamp(32px, 5vw, 54px);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+.hero h1 span {
+  background: linear-gradient(90deg, #5a9fff, #3ddfd0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero-sub {
+  color: rgba(255,255,255,0.55);
+  font-size: 15px;
+  max-width: 520px;
+  margin-bottom: 36px;
+  line-height: 1.7;
+}
+.hero-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.hero-pill {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: rgba(255,255,255,0.7);
+  font-size: 12.5px;
+  padding: 5px 14px;
+  border-radius: 99px;
+}
+
+/* ── SECTION WRAPPER ── */
+.section-wrap { max-width: 960px; margin: 0 auto; padding: 0 40px; }
+
+/* ── COMPANY HEADER ── */
+.company-header {
+  padding: 48px 0 0;
+}
+.company-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin-bottom: 6px;
+}
+.company-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
+}
+.company-period {
+  font-size: 13.5px;
+  color: var(--ink-3);
+  margin-bottom: 32px;
+}
+
+/* ── DASHBOARD ── */
+.dashboard {
+  display: grid;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+.db-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.db-head {
+  padding: 14px 20px;
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+.db-head.blue { background: var(--blue); color: #fff; }
+.db-head.teal { background: var(--teal); color: #fff; }
+.db-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 4px 8px 16px;
+}
+.db-metric {
+  padding: 12px 12px 8px;
+  text-align: center;
+}
+.db-num {
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 4px;
+}
+.db-num.pos { color: var(--teal); }
+.db-num.neg-good { color: var(--blue); }
+.db-num.big { color: var(--amber); }
+.db-lbl { font-size: 11.5px; color: var(--ink-3); line-height: 1.3; }
+.db-sub { font-size: 10.5px; color: var(--ink-3); opacity: 0.7; margin-top: 1px; }
+
+/* ── TOPIC ── */
+.topic {
+  margin-bottom: 48px;
+}
+.topic-num {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin-bottom: 8px;
+}
+.topic-title {
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 20px;
+}
+
+/* ── SUMMARY CARD ── */
+.summary-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+.sc-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--line);
+}
+.sc-tag {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--ink-3);
+}
+.sc-kpi {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 13px;
+  font-weight: 600;
+}
+.sc-kpi.blue { color: var(--blue); }
+.sc-kpi.teal { color: var(--teal); }
+.sc-kpi.amber { color: var(--amber); }
+.sc-row {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 0;
+  border-bottom: 1px solid var(--bg-2);
+  padding: 14px 20px;
+  align-items: start;
+}
+.sc-row:last-child { border-bottom: none; }
+.sc-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 2px 8px 2px 0;
+  padding-top: 1px;
+}
+.sc-label.before { color: var(--rose); }
+.sc-label.action { color: var(--blue); }
+.sc-label.after { color: var(--teal); }
+.sc-text { font-size: 13.5px; color: var(--ink-2); line-height: 1.6; }
+
+/* ── DETAIL TOGGLE ── */
+.detail-toggle {
+  width: 100%;
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px 18px;
+  font-size: 13px;
+  color: var(--ink-3);
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background 0.2s, color 0.2s;
+  margin-bottom: 12px;
+}
+.detail-toggle:hover { background: var(--line); color: var(--ink); }
+.toggle-icon { font-size: 16px; transition: transform 0.25s; }
+.detail-toggle.open .toggle-icon { transform: rotate(45deg); }
+
+.detail-body {
+  display: none;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 28px;
+  margin-bottom: 8px;
+}
+.detail-body.open { display: block; }
+
+/* ── DETAIL CONTENT ── */
+.d-section { margin-bottom: 24px; }
+.d-section:last-child { margin-bottom: 0; }
+.d-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin-bottom: 10px;
+}
+.d-label::before {
+  content: '';
+  display: block;
+  width: 3px;
+  height: 14px;
+  background: var(--blue);
+  border-radius: 2px;
+}
+.d-label.teal::before { background: var(--teal); }
+.d-label.amber::before { background: var(--amber); }
+.d-text { font-size: 13.5px; color: var(--ink-2); line-height: 1.75; }
+.d-text + .d-text { margin-top: 10px; }
+
+/* ── TABLE ── */
+.d-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  margin-top: 10px;
+  margin-bottom: 6px;
+}
+.d-table th {
+  text-align: left;
+  padding: 8px 12px;
+  color: var(--ink-3);
+  font-size: 11.5px;
+  font-weight: 600;
+  border-bottom: 2px solid var(--line);
+}
+.d-table td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--bg-2);
+  color: var(--ink-2);
+}
+.d-table tr:last-child td { border-bottom: none; }
+.d-table tr.hl td { font-weight: 700; color: var(--ink); background: var(--bg-2); }
+.d-table .pos { color: var(--teal); font-weight: 600; }
+.d-table .neg { color: var(--blue); font-weight: 600; }
+
+/* ── STEP LIST ── */
+.d-steps { list-style: none; counter-reset: steps; }
+.d-steps li {
+  counter-increment: steps;
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-size: 13.5px;
+  color: var(--ink-2);
+  line-height: 1.65;
+}
+.d-steps li::before {
+  content: counter(steps);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--blue);
+  background: var(--blue-light);
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+/* ── KPI ROW ── */
+.kpi-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+.kpi-chip {
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 13px;
+}
+.kpi-chip b { color: var(--blue); }
+.kpi-chip.teal b { color: var(--teal); }
+.kpi-chip.amber b { color: var(--amber); }
+
+/* ── DIVIDER ── */
+.company-divider {
+  border: none;
+  border-top: 1px solid var(--line);
+  margin: 56px 0 0;
+}
+
+/* ── CREATIVE GALLERY ── */
+.creative-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 12px;
+}
+.creative-item {
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--ink);
+}
+.creative-img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+video.creative-img {
+  object-fit: cover;
+  background: #000;
+}
+.creative-cap {
+  padding: 10px 12px;
+  font-size: 12px;
+  color: var(--ink-3);
+  background: var(--white);
+  line-height: 1.4;
+}
+@media (max-width: 700px) {
+  .creative-grid { grid-template-columns: 1fr; }
+}
+
+/* ── FOOTER ── */
+footer {
+  background: var(--ink);
+  color: rgba(255,255,255,0.35);
+  font-size: 12px;
+  text-align: center;
+  padding: 24px 40px;
+  margin-top: 72px;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 700px) {
+  nav { padding: 0 16px; }
+  nav a { padding: 0 8px; font-size: 12px; }
+  .hero { padding: 48px 20px 40px; }
+  .section-wrap { padding: 0 20px; }
+  .db-metrics { grid-template-columns: repeat(2,1fr); }
+  .sc-row { grid-template-columns: 68px 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <span class="nav-name">김수진 · 퍼포먼스 마케터</span>
+  <a href="#medibuilder"><span class="nav-dot dot-blue"></span>메디빌더</a>
+  <a href="#doubleearth"><span class="nav-dot dot-teal"></span>더블어스</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">Performance Marketing Portfolio</div>
+    <h1>데이터로 찾고<br><span>소재로 실행합니다</span></h1>
+    <p class="hero-sub">광고 운영부터 소재 기획·제작까지 전 사이클을 직접 담당하는 피부과 퍼포먼스 마케터. 병원 MSO(메디빌더)와 단일 병원 인하우스(더블어스) 양쪽 환경에서 숫자에서 인사이트를 꺼내 콘텐츠로 이어붙이는 방식으로 성과를 만들어왔습니다.</p>
+    <div class="hero-pills">
+      <span class="hero-pill">메타 · 구글 · 틱톡 · 당근</span>
+      <span class="hero-pill">소재 기획 · 영상 제작</span>
+      <span class="hero-pill">퍼포먼스 분석</span>
+      <span class="hero-pill">피부과 MSO · 인하우스 5년+</span>
+    </div>
+  </div>
+</div>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<!-- MEDIBUILDER -->
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<div id="medibuilder" class="section-wrap">
+  <div class="company-header">
+    <div class="company-label">현재 재직 중</div>
+    <div class="company-title">메디빌더 (오블리브앤파트너스 BU)</div>
+    <div class="company-period">2025.04 ~ 현재 · 병원 MSO · 데이터 마케팅팀(팀원) · 메타/구글/틱톡/당근 운영</div>
+  </div>
+
+  <!-- 대시보드 -->
+  <div class="dashboard" style="grid-template-columns:1fr;">
+    <!-- 피부체형 -->
+    <div class="db-card">
+      <div class="db-head blue">피부체형 센터 · 효율 개선 · 담당 2025.04~2026.04</div>
+      <div class="db-metrics" style="grid-template-columns:repeat(3,1fr);">
+        <div class="db-metric">
+          <div class="db-num neg-good">−19%</div>
+          <div class="db-lbl">유효DB단가</div>
+          <div class="db-sub">직전 대비 | 성숙기 기준</div>
+        </div>
+        <div class="db-metric">
+          <div class="db-num pos">6.6배</div>
+          <div class="db-lbl">ROAS</div>
+          <div class="db-sub">안착기 기준</div>
+        </div>
+        <div class="db-metric">
+          <div class="db-num big">+76%</div>
+          <div class="db-lbl">광고기여매출</div>
+          <div class="db-sub">단월 신기록 기준</div>
+        </div>
+      </div>
+    </div>
+    <!-- 롱래스팅 -->
+    <div class="db-card">
+      <div class="db-head teal">롱래스팅 센터 · 스케일 성장 · 담당 2025.09~현재</div>
+      <div class="db-metrics" style="grid-template-columns:repeat(3,1fr);">
+        <div class="db-metric">
+          <div class="db-num neg-good">−37%</div>
+          <div class="db-lbl">소재교체 CPA</div>
+          <div class="db-sub">직전 피로 대비 | 평균</div>
+        </div>
+        <div class="db-metric">
+          <div class="db-num pos">5~10x</div>
+          <div class="db-lbl">ROAS</div>
+          <div class="db-sub">히어로 캠페인 기준</div>
+        </div>
+        <div class="db-metric">
+          <div class="db-num big">+636%</div>
+          <div class="db-lbl">광고기여매출</div>
+          <div class="db-sub">월평균 기준</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOPIC 1 -->
+  <div class="topic">
+    <div class="topic-num">주제 01 · 피부체형 센터</div>
+    <div class="topic-title">상품 믹스 재편으로 ROAS 6.6배 — "더 싸게"가 아니라 "더 잘 팔리는 곳에"</div>
+
+    <div class="summary-card">
+      <div class="sc-head">
+        <span class="sc-tag">요약</span>
+        <span class="sc-kpi blue">안착기 ROAS 6.6배 · 고효율 예산 비중 13%→59%</span>
+      </div>
+      <div class="sc-row">
+        <span class="sc-label before">BEFORE</span>
+        <span class="sc-text">저효율 상품에 예산이 분산되어 ROAS가 정체. 획득DB단가(CPA)보다 예약 전환이 낮은 상품 구조가 근본 원인이었지만, 운영은 CPA 최적화에만 집중되어 있었음.</span>
+      </div>
+      <div class="sc-row">
+        <span class="sc-label action">ACTION</span>
+        <span class="sc-text">상품별 퍼널(광고비→DB수집→예약→내원→매출)을 분해해 고효율 상품을 분류, 저효율 상품 예산을 고전환 상품(가격소구 라인업)으로 재배분. 메타 외 고예약률 채널(구글·당근) 확장 병행.</span>
+      </div>
+      <div class="sc-row">
+        <span class="sc-label after">AFTER</span>
+        <span class="sc-text">CPA는 거의 그대로인데 안착기 ROAS 6.6배. 고효율(ROAS≥2.5) 상품 예산 비중 13%→59%. "더 싸게"가 아니라 "더 잘 팔리는 곳에 쓰는 것"으로 효율을 끌어올린 구조.</span>
+      </div>
+    </div>
+
+    <button class="detail-toggle" onclick="toggle(this)">
+      <span>전략 · 실행 · 레슨런 자세히 보기</span>
+      <span class="toggle-icon">+</span>
+    </button>
+    <div class="detail-body">
+      <div class="d-section">
+        <div class="d-label">기획의도</div>
+        <p class="d-text">상품별 퍼널을 분해해보니, 획득DB단가(CPA)가 싸도 예약 전환이 낮은 저효율 상품에 예산의 상당 부분이 묶여 있었습니다. 문제는 "어떻게 더 싸게 DB를 살 것인가"가 아니라 <strong>"어떤 상품에 예산을 태울지"를 다시 설계해야 한다</strong>는 것이었습니다.</p>
+      </div>
+      <div class="d-section">
+        <div class="d-label">입사 후 단계별 궤적</div>
+        <table class="d-table">
+          <tr><th>단계</th><th>기간</th><th>CPA 변화</th><th>ROAS</th><th>월 광고기여매출</th></tr>
+          <tr><td>직전(기준)</td><td>2024년</td><td>기준 (12,811원)</td><td>3.0</td><td>76.8M</td></tr>
+          <tr><td>입사 직전 (집행 위축)</td><td>25.01~03</td><td>기준 수준</td><td>—</td><td>~31M · 광고비 급감</td></tr>
+          <tr><td>입사직후 (집행 재가동)</td><td>25.04~06</td><td>+33%</td><td>3.0</td><td>40M</td></tr>
+          <tr><td>1차 개선</td><td>25.07~09</td><td class="neg">−20%</td><td>3.5</td><td>60M</td></tr>
+          <tr class="hl"><td>안착</td><td>25.10~12</td><td class="neg">−32%</td><td class="pos">6.6</td><td class="pos">69M</td></tr>
+          <tr><td>확장</td><td>26.01~04</td><td>−7%</td><td>4.5</td><td class="pos">181.6M (+136%)</td></tr>
+        </table>
+        <p class="d-text" style="margin-top:10px;">입사 직전 주력 상품 판매 중단 이슈로 광고 집행이 급격히 위축된 상태. 입사 후 집행을 재가동하며 규모를 키우는 과정에서 CPA가 일시 상승(정상적 구간). 7월부터 상품 가격 최적화 및 예산 재배분 효과가 나타나며 반전, 10~12월 ROAS 6.6배 정점. 확장기에도 CPA를 2024 이하로 유지.</p>
+      </div>
+      <div class="d-section">
+        <div class="d-label">실행</div>
+        <ol class="d-steps">
+          <li>상품별 퍼널 분해 — 광고비→DB수집→예약→내원→매출 단계마다 효율 매핑</li>
+          <li>효율 매트릭스 — ROAS·예약률·내원율 기준으로 상품 분류, 유지/확대/정리 판단</li>
+          <li>단계적 예산 이동 — 저효율 상품 예산 축소, 고효율 상품으로 단계적 확대</li>
+          <li>채널 다변화 — 메타(볼륨·저단가) + 구글·당근(예약률 46~58%) 역할 분담 운영</li>
+          <li>가격 A/B 테스트 — 동일 상품 가격대별 ROAS·내원율 비교, 최적 가격 라인 검증</li>
+        </ol>
+      </div>
+      <div class="d-section">
+        <div class="d-label amber">소재 예시</div>
+        <p class="d-text">피부체형 센터 주력 상품 소재. 올타이트는 가격소구 중심, 올리디아는 시술 효과 중심, 색소지우개는 저단가 신규 상품 소구로 각 상품 특성에 맞게 기획했습니다.</p>
+        <div class="creative-grid" style="grid-template-columns:repeat(3,1fr);">
+          <div class="creative-item">
+            <video src="media/mb_skin_02.mp4" class="creative-img" controls preload="metadata" style="object-fit:contain;background:#000;"></video>
+            <div class="creative-cap">올타이트 소재 · 가격소구 · ROAS 6.6배 달성 핵심 상품</div>
+          </div>
+          <div class="creative-item">
+            <video src="media/mb_skin_01.mp4" class="creative-img" controls preload="metadata" style="object-fit:contain;background:#000;"></video>
+            <div class="creative-cap">올리디아 소재 · 시술 효과 소구 · 유효DB단가 최저</div>
+          </div>
+          <div class="creative-item">
+            <video src="media/mb_skin_03.mp4" class="creative-img" controls preload="metadata" style="object-fit:contain;background:#000;"></video>
+            <div class="creative-cap">색소지우개(멜라리티) 소재 · 저단가 신규 상품 발굴 · 대량 DB 확보</div>
+          </div>
+        </div>
+      </div>
+      <div class="d-section">
+        <div class="d-label teal">레슨런</div>
+        <p class="d-text">ROAS 개선은 CPA 최적화만으로는 한계가 있고, 상품 구조와 예산 배분을 함께 설계할 때 가능합니다. 같은 획득DB단가에서 어떤 상품에 쓰냐가 결과를 갈랐습니다.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOPIC 2 -->
+  <div class="topic">
+    <div class="topic-num">주제 02 · 롱래스팅 센터</div>
+    <div class="topic-title">종료된 센터 재론칭 + 소재 컨셉 전환으로 CPA −37%, 매출 +636%</div>
+
+    <div class="summary-card">
+      <div class="sc-head">
+        <span class="sc-tag">요약</span>
+        <span class="sc-kpi teal">소재교체 CPA −37% (최대 −78%) · 재론칭 후 매출 +636%</span>
+      </div>
+      <div class="sc-row">
+        <span class="sc-label before">BEFORE</span>
+        <span class="sc-text">효율 부진으로 센터 자체가 종료된 상태. 재론칭 후 광고비를 키울수록 소재가 빨리 피로해져 CPA가 오르는 문제가 반복될 것이 예상됨. 단순 리터치로 재투입해도 효과가 오래 가지 못하는 패턴.</span>
+      </div>
+      <div class="sc-row">
+        <span class="sc-label action">ACTION</span>
+        <span class="sc-text">포맷·소구점·모델을 완전히 다른 축으로 바꾼 신규 소재를 상시 기획·제작(브이로그형·팩트체크 리뷰형, 타겟별 모델 교체). 신규 모수 확보(맞춤타겟 제외) + 고효율 매체 비중 확대 병행.</span>
+      </div>
+      <div class="sc-row">
+        <span class="sc-label after">AFTER</span>
+        <span class="sc-text">소재교체 32건 전수 분석 — 69% 개선, 평균 −37%(최대 −78%). 재론칭 직후 CPA −23%, 확장기(광고비 ×3.5)에도 CPA −8% 유지. 광고기여매출 월평균 +636% 성장.</span>
+      </div>
+    </div>
+
+    <button class="detail-toggle" onclick="toggle(this)">
+      <span>전략 · 실행 · 레슨런 자세히 보기</span>
+      <span class="toggle-icon">+</span>
+    </button>
+    <div class="detail-body">
+      <div class="d-section">
+        <div class="d-label">기획의도</div>
+        <p class="d-text">효율 부진으로 센터 자체가 종료된 상태에서 담당하게 됐습니다. 재론칭하더라도 광고비를 키우면 소재 피로가 가속되고 CPA가 오를 것이 예상되는 상황. <strong>"다시 키우면서도 효율을 지킬 수 있는 운영 방식"</strong>이 필요했습니다.</p>
+      </div>
+      <div class="d-section">
+        <div class="d-label">A. 소재 교체 효과 (변곡점 기준, 전수 집계)</div>
+        <div class="kpi-row">
+          <div class="kpi-chip">검증 범위 <b>32건 전수</b></div>
+          <div class="kpi-chip">개선률 <b>22건 (69%)</b></div>
+          <div class="kpi-chip">개선 평균 <b>−37%</b></div>
+          <div class="kpi-chip">최대 개선 <b>−78%</b></div>
+        </div>
+        <p class="d-text" style="margin-top:10px;">단순히 자주 바꾼 게 아니라, 포맷·소구점·모델이라는 축 자체를 바꿔야 같은 상품에서도 CPA가 회복된다는 것을 32건 데이터로 확인했습니다.</p>
+      </div>
+      <div class="d-section">
+        <div class="d-label teal">B. 입사 후 단계별 궤적</div>
+        <table class="d-table">
+          <tr><th>단계</th><th>기간</th><th>CPA 변화</th><th>ROAS</th><th>월 광고기여매출</th></tr>
+          <tr><td>직전(기준)</td><td>2024.08~25.03</td><td>기준</td><td>2.8</td><td>29.3M</td></tr>
+          <tr><td>입사직후(집행 축소)</td><td>25.04~08</td><td>—</td><td>2.9</td><td>집행 거의 없음</td></tr>
+          <tr class="hl"><td>재론칭 스케일 1차</td><td>25.09~12</td><td class="neg">−23%</td><td class="pos">5.6</td><td class="pos">+292%</td></tr>
+          <tr><td>확장</td><td>26.01~06</td><td class="neg">−4%</td><td>5.1</td><td class="pos">+636%</td></tr>
+        </table>
+      </div>
+      <div class="d-section">
+        <div class="d-label">실행</div>
+        <ol class="d-steps">
+          <li>채널별 CPA·노출빈도 모니터링으로 소재 피로 시점 포착</li>
+          <li>피로 신호 포착 시, 포맷(배너→브이로그형 영상)·소구점(효과강조→팩트체크 리뷰)·모델을 다른 축으로 바꾼 신규 소재 즉시 기획·제작</li>
+          <li>신규 소재 투입 후 초기 3주/안정화 구간 성과 비교, 효과적인 컨셉 축을 패턴으로 축적</li>
+          <li>제작 프로세스 개선(다중 툴→프리미어프로 단일화), 영상 1편 제작기간 5일→3일(−40%)</li>
+          <li>신규 모수 확보(맞춤타겟 제외)로 광고 초반 단가 상승 방지, 고효율 매체 비중 확대 병행</li>
+        </ol>
+      </div>
+      <div class="d-section">
+        <div class="d-label amber">소재 예시</div>
+        <p class="d-text">롱래스팅 센터 재론칭 후 제작한 눈썹문신 광고 영상. 기존 소재가 피로해진 시점에 포맷과 소구점을 다른 축으로 바꿔 CPA를 회복시킨 컨셉 전환 소재입니다.</p>
+        <div class="creative-grid" style="grid-template-columns:1fr;">
+          <div class="creative-item">
+            <video src="media/mb_eyebrow.mp4" class="creative-img" controls preload="metadata" style="object-fit:contain;background:#000;height:300px;"></video>
+            <div class="creative-cap">롱래스팅 눈썹문신 소재 · 소재 컨셉 전환으로 CPA -37% 달성 캠페인</div>
+          </div>
+        </div>
+      </div>
+      <div class="d-section">
+        <div class="d-label teal">레슨런</div>
+        <p class="d-text">소재 교체의 핵심은 "속도"가 아니라 "같은 메시지의 변주를 넘어서는 것"이었습니다. 포맷·소구점·모델이라는 다른 축을 바꿔야 진짜로 피로가 회복됐고, 이 운영 패턴이 누적되며 완전히 꺼졌던 캠페인을 스케일까지 키울 수 있는 기반이 됐습니다.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="company-divider" style="max-width:960px;margin:56px auto 0;">
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<!-- 더블어스 -->
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<div id="doubleearth" class="section-wrap">
+  <div class="company-header">
+    <div class="company-label">이전 경력</div>
+    <div class="company-title">더블어스 (닥터홈즈의원)</div>
+    <div class="company-period">2018.11 ~ 2022.02 · 3년 4개월 · 피부과 인하우스 마케팅(부과장) · 메타/구글/GFA/카카오 운영</div>
+  </div>
+
+  <!-- 대시보드 -->
+  <div class="dashboard" style="grid-template-columns:repeat(4,1fr);">
+    <div class="db-card" style="border-top:3px solid var(--teal);">
+      <div class="db-metrics" style="grid-template-columns:1fr;padding:16px 12px;">
+        <div class="db-metric">
+          <div class="db-num big">×3</div>
+          <div class="db-lbl">매출 성장</div>
+          <div class="db-sub">FB 객단가 개선 캠페인</div>
+        </div>
+      </div>
+    </div>
+    <div class="db-card" style="border-top:3px solid var(--blue);">
+      <div class="db-metrics" style="grid-template-columns:1fr;padding:16px 12px;">
+        <div class="db-metric">
+          <div class="db-num neg-good">290%</div>
+          <div class="db-lbl">ROAS 역대 최고</div>
+          <div class="db-sub">목표 250% 초과</div>
+        </div>
+      </div>
+    </div>
+    <div class="db-card" style="border-top:3px solid var(--teal);">
+      <div class="db-metrics" style="grid-template-columns:1fr;padding:16px 12px;">
+        <div class="db-metric">
+          <div class="db-num neg-good">−35%</div>
+          <div class="db-lbl">전환단가 개선</div>
+          <div class="db-sub">광고유형 맞춤 배너</div>
+        </div>
+      </div>
+    </div>
+    <div class="db-card" style="border-top:3px solid var(--blue);">
+      <div class="db-metrics" style="grid-template-columns:1fr;padding:16px 12px;">
+        <div class="db-metric">
+          <div class="db-num big">×25</div>
+          <div class="db-lbl">랜딩 조회율</div>
+          <div class="db-sub">CS 인터뷰 기반 배너</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOPIC A -->
+  <div class="topic">
+    <div class="topic-num">주제 A · 페이스북 ROAS 캠페인</div>
+    <div class="topic-title">위기의 ROAS를 역대 최고로 — 객단가 재설계로 매출 ×3</div>
+
+    <div class="summary-card">
+      <div class="sc-head">
+        <span class="sc-tag">요약</span>
+        <span class="sc-kpi blue">ROAS 110% → 290% · 매출 ×3 · 목표 250% 초과</span>
+      </div>
+      <div class="sc-row">
+        <span class="sc-label before">BEFORE</span>
+        <span class="sc-text">페이스북은 전환단가가 가장 낮았지만 ROAS는 타 매체 절반 수준의 고질적 문제. 광고대행사 위탁 운영 기간엔 ROAS가 110%까지 추가 하락.</span>
+      </div>
+      <div class="sc-row">
+        <span class="sc-label action">ACTION</span>
+        <span class="sc-text">직접운영 복귀 후 매출 지표 분석으로 객단가 문제 발견. 내원율 높은 시술의 중저가 패키지 상품 기획, 타겟 연령 확대, 가성비 강조 배너 리뉴얼.</span>
+      </div>
+      <div class="sc-row">
+        <span class="sc-label after">AFTER</span>
+        <span class="sc-text">4개월 만에 ROAS 110%→290%(역대 최고, 목표 250% 초과), 객단가 30%+ 향상, 매출 ×3. 동일 전략을 GFA에 적용해 배너광고 최초 ROAS 500% 추가 달성.</span>
+      </div>
+    </div>
+
+    <button class="detail-toggle" onclick="toggle(this)">
+      <span>캠페인 타임라인 · 실행 · 레슨런 자세히 보기</span>
+      <span class="toggle-icon">+</span>
+    </button>
+    <div class="detail-body">
+      <div class="d-section">
+        <div class="d-label">기획의도</div>
+        <p class="d-text">광고대행사 위탁으로 ROAS가 110%까지 떨어진 시점에 직접운영으로 복귀. 단순 회복이 아니라 역대 최고 ROAS를 목표로 구조적 개선에 도전. 매출 지표를 분해하자 객단가가 다른 매체 대비 50% 수준이라는 근본 원인이 보였습니다.</p>
+        <p class="d-text" style="margin-top:10px;">ROAS 개선은 광고비 축소 또는 매출 상승, 두 방향이 있습니다. 성장 중인 병원 상황을 고려해 광고비는 유지하면서 매출 상승으로 ROAS를 끌어올리는 방향을 선택했습니다.</p>
+      </div>
+      <div class="d-section">
+        <div class="d-label">캠페인 타임라인</div>
+        <table class="d-table">
+          <tr><th>시점</th><th>ROAS</th><th>비고</th></tr>
+          <tr><td>대행사 위탁 직후</td><td>110%</td><td>전체매체 평균 절반 수준, 위기</td></tr>
+          <tr><td>직접운영 복귀 (2월)</td><td>110→180%</td><td>객단가 전략 설계·투입</td></tr>
+          <tr><td>3개월차 (4월)</td><td>270%</td><td>패키지 상품·배너 리뉴얼 효과</td></tr>
+          <tr class="hl"><td>목표 달성 (5월)</td><td class="pos">290%</td><td>역대 최고, 목표 250% 초과</td></tr>
+        </table>
+      </div>
+      <div class="d-section">
+        <div class="d-label">실행</div>
+        <ol class="d-steps">
+          <li>매출 지표 분해 — 객단가에서 페이스북이 타 매체 50% 수준이라는 문제 발견</li>
+          <li>광고상품 재설계 — 내원율 높은 다이어트 시술을 중저가 패키지로 묶어 기획</li>
+          <li>타겟 확대 — 구매력을 고려해 메인 타겟을 20대에서 20대 후반~30대로 상향</li>
+          <li>배너 리뉴얼 — 가성비 혜택 강조, 소재 전면 교체</li>
+          <li>ROAS 중심 운영 — 광고지표 대신 매출지표(ROAS) 중심으로 캠페인 목적·예산 재편</li>
+        </ol>
+      </div>
+      <div class="d-section">
+        <div class="d-label amber">소재 예시</div>
+        <p class="d-text">단일 저가 상품에서 다부위 묶음 패키지로 전환한 광고 배너. 가성비 구성으로 중저가 타겟의 구매 허들을 낮추면서 객단가를 끌어올렸습니다.</p>
+        <div class="creative-grid">
+          <div class="creative-item">
+            <img src="media/db_01.jpg" alt="1+1 지방파괴주사 패키지 배너" class="creative-img">
+            <div class="creative-cap">1+1 패키지 소재 · 팔뚝+허벅지 2부위 묶음 · 한정 이벤트 소구</div>
+          </div>
+          <div class="creative-item">
+            <img src="media/db_03.jpg" alt="3부위 다이어트 패키지 배너" class="creative-img">
+            <div class="creative-cap">3부위 패키지 소재 · 등살+옆구리+뱃살 묶음 · 물음표로 관심 유발</div>
+          </div>
+        </div>
+      </div>
+      <div class="d-section">
+        <div class="d-label teal">레슨런</div>
+        <p class="d-text">ROAS 개선은 운영 기술 최적화만으로는 한계가 있고, "어떤 상품을, 누구에게, 어떻게 패키징해서 보여줄지"를 함께 설계해야 한다는 것을 확인했습니다. GFA에 동일 전략을 적용해 ROAS 500%라는 추가 성과로 재현성을 검증했습니다.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOPIC B -->
+  <div class="topic">
+    <div class="topic-num">주제 B · 페이스북 예약률 캠페인</div>
+    <div class="topic-title">광고유형 전환 + CS 인터뷰 기반 배너로 전환단가 −35%</div>
+
+    <div class="summary-card">
+      <div class="sc-head">
+        <span class="sc-tag">요약</span>
+        <span class="sc-kpi teal">전환단가 −35% · 랜딩 조회율 ×25 · 조회당 비용 −95%</span>
+      </div>
+      <div class="sc-row">
+        <span class="sc-label before">BEFORE</span>
+        <span class="sc-text">페이스북 예약률 18%로 타 매체 평균 대비 낮음. 부재율 60%+, 가격만 문의하거나 시술을 수술로 오인하는 콜이 다수. 전환단가도 높아 효율이 이중으로 낮은 상황.</span>
+      </div>
+      <div class="sc-row">
+        <span class="sc-label action">ACTION</span>
+        <span class="sc-text">잠재광고를 트래픽광고로 전환하고, CS팀 인터뷰로 파악한 고객 질문을 배너에 적용(시술효과·나이 노출 / 가격 미표기로 클릭 유도). 타겟 세분화 + 캠페인 빈도 관리 병행.</span>
+      </div>
+      <div class="sc-row">
+        <span class="sc-label after">AFTER</span>
+        <span class="sc-text">랜딩페이지 조회율 ×25, 조회당 비용 −95%, 전환단가 −35%, 전체 예약률 +5%p. 광고유형과 배너를 동시에 바꿔야 한다는 것을 수치로 확인.</span>
+      </div>
+    </div>
+
+    <button class="detail-toggle" onclick="toggle(this)">
+      <span>전략 · 실행 · 레슨런 자세히 보기</span>
+      <span class="toggle-icon">+</span>
+    </button>
+    <div class="detail-body">
+      <div class="d-section">
+        <div class="d-label">기획의도</div>
+        <p class="d-text">콜성과 데이터를 매체별로 재가공해 분석하던 중 페이스북 예약률(18%)이 다른 배너광고 평균보다 크게 낮다는 것을 발견했습니다. 원인을 분석하니 부재율 60%+, 가격만 묻는 콜, 수술로 오인하는 문의가 다수였습니다. 페이스북 광고 운영담당자로 추가 배정되어 이 문제를 해결해야 했습니다.</p>
+        <p class="d-text" style="margin-top:10px;">트래픽광고는 예약률 개선에 도움이 되지만 전환단가가 높아지는 게 고질적 문제였습니다. 단순히 광고유형만 바꾸는 게 아니라, 그 유형에 최적화된 배너를 다시 기획해야 두 문제를 동시에 해결할 수 있었습니다.</p>
+      </div>
+      <div class="d-section">
+        <div class="d-label">실행</div>
+        <ol class="d-steps">
+          <li>콜성과 데이터 재가공 — 개인 콜성과 데이터를 광고매체별로 통합해 예약률 문제 발견</li>
+          <li>트래픽광고 전용 배너 기획 — CPM 과금방식에 맞춰 클릭률 최대화 목표, 정보량 10줄→2~3줄로 압축</li>
+          <li>정보 노출 전략 — CS팀 인터뷰로 고객 최다 질문 파악: 시술효과(2위)는 노출, 가격(1위)은 미표기로 궁금증 유발</li>
+          <li>타겟 세분화 — 이전 광고 참여 고객 데이터 기반 맞춤·유사 타겟 설정</li>
+          <li>캠페인 빈도 관리 — 1인당 노출 빈도·첫 노출 비율 데이터로 광고 피로도 관리</li>
+        </ol>
+      </div>
+      <div class="d-section">
+        <div class="d-label amber">소재 예시</div>
+        <p class="d-text">같은 상품이지만 광고 유형에 따라 소재를 완전히 다르게 기획했습니다. 잠재광고는 가격 표기·즉시 신청 유도, 트래픽광고 영상은 가격 미표기·나이 표기·호기심으로 클릭 유도.</p>
+        <div class="creative-grid">
+          <div class="creative-item">
+            <img src="media/db_02.jpg" alt="잠재광고 재라이브 배너" class="creative-img" style="object-position: center center;">
+            <div class="creative-cap">잠재광고 재라이브 소재 · 가격 표기 · 시술효과 직접 표현 · 즉시 신청 유도</div>
+          </div>
+          <div class="creative-item">
+            <video src="media/db_video.mp4" class="creative-img" controls preload="metadata" style="object-fit:contain; background:#000;"></video>
+            <div class="creative-cap">트래픽광고 전용 영상 · 가격 미표기 · 20-29세 나이 표기 · 궁금증으로 클릭 유도</div>
+          </div>
+        </div>
+      </div>
+      <div class="d-section">
+        <div class="d-label teal">레슨런</div>
+        <p class="d-text">광고유형과 배너 콘텐츠는 세트로 바꿔야 효과가 납니다. 유형만 바꾸고 배너를 그대로 두면 새로운 전환경로에 맞지 않아 효율 개선이 제한적입니다. 전환 과정의 차이를 이해하고 고객 행동을 역방향으로 설계하는 것이 핵심이었습니다.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  © 김수진 · 퍼포먼스 마케터 포트폴리오
+</footer>
+
+<script>
+function toggle(btn) {
+  btn.classList.toggle('open');
+  const body = btn.nextElementSibling;
+  body.classList.toggle('open');
+}
+</script>
+</body>
+</html>
