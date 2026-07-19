@@ -336,7 +336,7 @@ nav a:hover, nav a:focus-visible { color: #fff; }
 .axis-badge.creative { background: var(--teal-light); color: var(--teal); }
 .axis-badge.product { background: #fdeee0; color: var(--amber); }
 
-/* ── SPAARL CARD (Situation-Problem-Analysis-Action-Result-Lesson) ── */
+/* ── CIAR CARD (Challenge-Insight-Action-Result) ── */
 .spaarl-card {
   background: var(--white);
   border: 1px solid var(--line);
@@ -365,20 +365,15 @@ nav a:hover, nav a:focus-visible { color: #fff; }
 }
 .spaarl-text { font-size: 13.5px; color: var(--ink-2); line-height: 1.65; }
 
-.spaarl-row.situation { border-left-color: var(--ink-3); }
-.spaarl-row.situation .spaarl-label { color: var(--ink-3); }
-.spaarl-row.problem { border-left-color: var(--rose); }
-.spaarl-row.problem .spaarl-label { color: var(--rose); }
-.spaarl-row.analysis { border-left-color: var(--amber); }
-.spaarl-row.analysis .spaarl-label { color: var(--amber); }
+.spaarl-row.challenge { border-left-color: var(--rose); }
+.spaarl-row.challenge .spaarl-label { color: var(--rose); }
+.spaarl-row.insight { border-left-color: var(--amber); }
+.spaarl-row.insight .spaarl-label { color: var(--amber); }
 .spaarl-row.action { border-left-color: var(--blue); }
 .spaarl-row.action .spaarl-label { color: var(--blue); }
 .spaarl-row.result { border-left-color: var(--teal); }
 .spaarl-row.result .spaarl-label { color: var(--teal); }
 .spaarl-row.result .spaarl-text { font-weight: 500; color: var(--ink); }
-.spaarl-row.lesson { border-left-color: var(--violet); background: #faf9fd; }
-.spaarl-row.lesson .spaarl-label { color: var(--violet); }
-.spaarl-row.lesson .spaarl-text { font-style: italic; }
 
 /* ── DETAIL TOGGLE ── */
 .detail-toggle {
@@ -736,17 +731,13 @@ footer {
     </div>
 
     <div class="spaarl-card">
-      <div class="spaarl-row situation">
-        <span class="spaarl-label">Situation</span>
-        <span class="spaarl-text">2025년 4월부터 피부체형 센터를 담당하게 됐을 때, 저효율 상품에 예산이 분산돼 <abbr title="Return On Ad Spend, 광고비 대비 매출">ROAS</abbr>가 정체돼 있었습니다.</span>
+      <div class="spaarl-row challenge">
+        <span class="spaarl-label">Challenge</span>
+        <span class="spaarl-text">2025년 4월부터 피부체형 센터를 담당하게 됐을 때, 저효율 상품에 예산이 분산돼 <abbr title="Return On Ad Spend, 광고비 대비 매출">ROAS</abbr>가 정체돼 있었습니다. 운영은 획득DB단가(<abbr title="Cost Per Action, 전환 1건당 광고비">CPA</abbr>) 최적화에만 집중돼 있었지만 좀처럼 개선되지 않는 상황이었습니다.</span>
       </div>
-      <div class="spaarl-row problem">
-        <span class="spaarl-label">Problem</span>
-        <span class="spaarl-text">획득DB단가(<abbr title="Cost Per Action, 전환 1건당 광고비">CPA</abbr>)보다 예약 전환이 낮은 상품 구조가 근본 원인이었지만, 운영은 CPA 최적화에만 집중돼 있었습니다.</span>
-      </div>
-      <div class="spaarl-row analysis">
-        <span class="spaarl-label">Analysis</span>
-        <span class="spaarl-text">상품별 퍼널(광고비→DB수집→예약→내원→매출)을 분해해보니, CPA가 싸도 예약 전환이 낮은 저효율 상품에 예산의 상당 부분이 묶여 있다는 것을 확인했습니다.</span>
+      <div class="spaarl-row insight">
+        <span class="spaarl-label">Insight</span>
+        <span class="spaarl-text">상품별 퍼널(광고비→DB수집→예약→내원→매출)을 분해해보니, CPA보다 예약 전환이 낮은 상품 구조가 근본 원인이었습니다. CPA가 싸도 예약 전환이 낮은 저효율 상품에 예산의 상당 부분이 묶여 있었던 겁니다. 예산을 저효율 상품에서 고효율 상품 중심으로 다시 배분해야 한다고 판단했습니다.</span>
       </div>
       <div class="spaarl-row action">
         <span class="spaarl-label">Action</span>
@@ -755,10 +746,6 @@ footer {
       <div class="spaarl-row result">
         <span class="spaarl-label">Result</span>
         <span class="spaarl-text">CPA는 거의 그대로인데 안착기 ROAS 6.6배를 달성했고, 고효율(ROAS≥2.5) 상품 예산 비중은 13%→59%로 늘었습니다.</span>
-      </div>
-      <div class="spaarl-row lesson">
-        <span class="spaarl-label">Lesson</span>
-        <span class="spaarl-text">ROAS 개선은 CPA 최적화만으로는 한계가 있고, 어떤 상품에 예산을 쓰느냐가 결과를 갈랐습니다.</span>
       </div>
     </div>
 
@@ -808,6 +795,10 @@ footer {
           </div>
         </div>
       </div>
+      <div class="d-section">
+        <div class="d-label teal">레슨런</div>
+        <p class="d-text">ROAS 개선은 CPA 최적화만으로는 한계가 있고, 어떤 상품에 예산을 쓰느냐가 결과를 갈랐습니다.</p>
+      </div>
     </div>
   </article>
 
@@ -820,16 +811,12 @@ footer {
     </div>
 
     <div class="spaarl-card">
-      <div class="spaarl-row situation">
-        <span class="spaarl-label">Situation</span>
-        <span class="spaarl-text">운영이 종료됐던 롱래스팅 센터의 광고 운영을 맡아, 재운영 과정에서 광고 성과 개선을 담당했습니다.</span>
+      <div class="spaarl-row challenge">
+        <span class="spaarl-label">Challenge</span>
+        <span class="spaarl-text">운영이 종료됐던 롱래스팅 센터의 광고 운영을 맡아, 재운영 과정에서 광고 성과 개선을 담당했습니다. 광고비를 키울수록 소재가 빨리 피로해져 CPA가 오르는 문제가 반복될 것으로 예상됐고, 단순 리터치로 재투입해도 효과가 오래가지 못하는 패턴이었습니다.</span>
       </div>
-      <div class="spaarl-row problem">
-        <span class="spaarl-label">Problem</span>
-        <span class="spaarl-text">광고비를 키울수록 소재가 빨리 피로해져 CPA가 오르는 문제가 반복될 것으로 예상됐고, 단순 리터치로 재투입해도 효과가 오래가지 못하는 패턴이었습니다.</span>
-      </div>
-      <div class="spaarl-row analysis">
-        <span class="spaarl-label">Analysis</span>
+      <div class="spaarl-row insight">
+        <span class="spaarl-label">Insight</span>
         <span class="spaarl-text">운영 기간 동안 진행한 소재 교체 사례 32건을 정리·분석한 결과, 포맷·소구점·모델이라는 축 자체를 바꿔야 같은 상품에서도 CPA가 회복된다는 것을 확인했습니다.</span>
       </div>
       <div class="spaarl-row action">
@@ -838,11 +825,7 @@ footer {
       </div>
       <div class="spaarl-row result">
         <span class="spaarl-label">Result</span>
-        <span class="spaarl-text">32건 중 22건(69%)에서 CPA가 개선됐고(평균 37% 감소, 최대 78% 감소), 재운영 직후 CPA는 23% 감소했으며, 확장기(광고비 ×3.5)에도 CPA 상승폭을 8% 이내로 유지했습니다. 광고기여매출은 월평균 636% 증가했습니다.</span>
-      </div>
-      <div class="spaarl-row lesson">
-        <span class="spaarl-label">Lesson</span>
-        <span class="spaarl-text">소재 교체의 핵심은 속도가 아니라, 포맷·소구점·모델이라는 다른 축으로 바꾸는 것이었습니다.</span>
+        <span class="spaarl-text">32건 중 22건(69%)에서 CPA가 개선됐고(평균 37% 감소, 최대 78% 감소), 재운영 직후 CPA는 23% 감소했으며, 확장기(광고비 3.5배)에도 CPA 상승폭을 8% 이내로 유지했습니다. 광고기여매출은 월평균 636% 증가했습니다.</span>
       </div>
     </div>
 
@@ -893,6 +876,10 @@ footer {
             <div class="creative-cap">롱래스팅 눈썹문신 소재 2 · 모델·소구점 교체 버전</div>
           </div>
         </div>
+      </div>
+      <div class="d-section">
+        <div class="d-label teal">레슨런</div>
+        <p class="d-text">소재 교체의 핵심은 속도가 아니라, 포맷·소구점·모델이라는 다른 축으로 바꾸는 것이었습니다.</p>
       </div>
     </div>
   </article>
@@ -954,21 +941,17 @@ footer {
   <article class="topic">
     <div class="topic-num">주제 A · 페이스북 ROAS 캠페인</div>
     <div class="topic-head">
-      <h3 class="topic-title">위기의 ROAS를 역대 최고로 — 객단가 재설계로 매출 ×3</h3>
+      <h3 class="topic-title">위기의 ROAS를 역대 최고로 — 객단가 재설계로 매출 3배</h3>
       <span class="axis-badge product">상품 전략</span>
     </div>
 
     <div class="spaarl-card">
-      <div class="spaarl-row situation">
-        <span class="spaarl-label">Situation</span>
-        <span class="spaarl-text">광고대행사 위탁 운영 기간 ROAS가 110%까지 떨어진 시점에 직접운영으로 복귀했습니다.</span>
+      <div class="spaarl-row challenge">
+        <span class="spaarl-label">Challenge</span>
+        <span class="spaarl-text">광고대행사 위탁 운영 기간 ROAS가 110%까지 떨어진 시점에 직접운영으로 복귀했습니다. 페이스북은 전환단가가 가장 낮았지만 ROAS는 타 매체 절반 수준이었고, 매출 지표를 분해하자 객단가가 타 매체 대비 50% 수준이라는 게 근본 원인으로 드러났습니다.</span>
       </div>
-      <div class="spaarl-row problem">
-        <span class="spaarl-label">Problem</span>
-        <span class="spaarl-text">페이스북은 전환단가가 가장 낮았지만 ROAS는 타 매체 절반 수준이었고, 매출 지표를 분해하자 객단가가 타 매체 대비 50% 수준이라는 게 근본 원인으로 드러났습니다.</span>
-      </div>
-      <div class="spaarl-row analysis">
-        <span class="spaarl-label">Analysis</span>
+      <div class="spaarl-row insight">
+        <span class="spaarl-label">Insight</span>
         <span class="spaarl-text">ROAS 개선은 광고비 축소 또는 매출 상승 두 방향이 있었는데, 성장 중인 병원 상황을 고려해 광고비는 유지하면서 매출 상승으로 끌어올리는 방향을 선택했습니다.</span>
       </div>
       <div class="spaarl-row action">
@@ -978,10 +961,6 @@ footer {
       <div class="spaarl-row result">
         <span class="spaarl-label">Result</span>
         <span class="spaarl-text">4개월 만에 ROAS 110%→290%(역대 최고, 목표 250% 초과), 객단가 30%+ 향상, 매출은 3배로 늘었습니다. 동일 전략을 GFA에 적용해 ROAS 500%도 추가로 달성했습니다.</span>
-      </div>
-      <div class="spaarl-row lesson">
-        <span class="spaarl-label">Lesson</span>
-        <span class="spaarl-text">ROAS 개선은 운영 기술만으로는 한계가 있고, 어떤 상품을 누구에게 어떻게 패키징해서 보여줄지를 함께 설계해야 했습니다.</span>
       </div>
     </div>
 
@@ -1024,6 +1003,10 @@ footer {
           </div>
         </div>
       </div>
+      <div class="d-section">
+        <div class="d-label teal">레슨런</div>
+        <p class="d-text">ROAS 개선은 운영 기술만으로는 한계가 있고, 어떤 상품을 누구에게 어떻게 패키징해서 보여줄지를 함께 설계해야 했습니다.</p>
+      </div>
     </div>
   </article>
 
@@ -1035,16 +1018,12 @@ footer {
     </div>
 
     <div class="spaarl-card">
-      <div class="spaarl-row situation">
-        <span class="spaarl-label">Situation</span>
-        <span class="spaarl-text">콜성과 데이터를 매체별로 재가공해 분석하던 중 페이스북 예약률(18%)이 유독 낮다는 것을 발견해, 페이스북 담당자로 추가 배정됐습니다.</span>
+      <div class="spaarl-row challenge">
+        <span class="spaarl-label">Challenge</span>
+        <span class="spaarl-text">콜성과 데이터를 매체별로 재가공해 분석하던 중 페이스북 예약률(18%)이 유독 낮다는 것을 발견해, 페이스북 담당자로 추가 배정됐습니다. 부재율 60%+, 가격만 묻는 콜, 시술을 수술로 오인하는 문의가 많았고, 전환단가도 높아 효율이 이중으로 낮은 상황이었습니다.</span>
       </div>
-      <div class="spaarl-row problem">
-        <span class="spaarl-label">Problem</span>
-        <span class="spaarl-text">부재율 60%+, 가격만 묻는 콜, 시술을 수술로 오인하는 문의가 많았고, 전환단가도 높아 효율이 이중으로 낮은 상황이었습니다.</span>
-      </div>
-      <div class="spaarl-row analysis">
-        <span class="spaarl-label">Analysis</span>
+      <div class="spaarl-row insight">
+        <span class="spaarl-label">Insight</span>
         <span class="spaarl-text">트래픽광고로 바꾸면 예약률은 개선되지만 전환단가가 오르는 게 고질적 문제였고, 광고유형과 배너를 함께 재설계해야 두 문제를 동시에 풀 수 있다고 판단했습니다.</span>
       </div>
       <div class="spaarl-row action">
@@ -1054,10 +1033,6 @@ footer {
       <div class="spaarl-row result">
         <span class="spaarl-label">Result</span>
         <span class="spaarl-text">랜딩페이지 조회율 25배, 조회당 비용 −95%, 전환단가 −35%, 전체 예약률 +5%p를 기록했습니다.</span>
-      </div>
-      <div class="spaarl-row lesson">
-        <span class="spaarl-label">Lesson</span>
-        <span class="spaarl-text">광고유형과 배너 콘텐츠는 세트로 바꿔야 효과가 나고, 유형만 바꾸면 개선이 제한적이었습니다.</span>
       </div>
     </div>
 
@@ -1089,6 +1064,10 @@ footer {
             <div class="creative-cap">트래픽광고 전용 영상 · 가격 미표기 · 20-29세 나이 표기 · 궁금증으로 클릭 유도</div>
           </div>
         </div>
+      </div>
+      <div class="d-section">
+        <div class="d-label teal">레슨런</div>
+        <p class="d-text">광고유형과 배너 콘텐츠는 세트로 바꿔야 효과가 나고, 유형만 바꾸면 개선이 제한적이었습니다.</p>
       </div>
     </div>
   </article>
