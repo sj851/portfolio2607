@@ -431,13 +431,15 @@ nav .dot-teal { background: var(--teal); }
 }
 .creative-img {
   width: 100%;
-  height: 240px;
-  object-fit: cover;
-  object-position: center top;
+  height: auto;
+  max-height: 520px;
+  object-fit: contain;
+  object-position: center center;
   display: block;
+  background: #000;
 }
 video.creative-img {
-  object-fit: cover;
+  object-fit: contain;
   background: #000;
 }
 .creative-cap {
@@ -613,15 +615,15 @@ footer {
         <p class="d-text">피부체형 센터 주력 상품 소재. 올타이트는 가격소구 중심, 올리디아는 시술 효과 중심, 색소지우개는 저단가 신규 상품 소구로 각 상품 특성에 맞게 기획했습니다.</p>
         <div class="creative-grid" style="grid-template-columns:repeat(3,1fr);">
           <div class="creative-item">
-            <video src="media/mb_skin_02.mp4" poster="media/mb_skin_02_thumb.jpg" class="creative-img" controls preload="none" style="object-fit:cover;background:#000;"></video>
+            <video src="media/mb_skin_02.mp4" poster="media/mb_skin_02_thumb.jpg" class="creative-img" controls preload="none" ></video>
             <div class="creative-cap">올타이트 소재 · 가격소구 · ROAS 6.6배 달성 핵심 상품</div>
           </div>
           <div class="creative-item">
-            <video src="media/mb_skin_01.mp4" poster="media/mb_skin_01_thumb.jpg" class="creative-img" controls preload="none" style="object-fit:cover;background:#000;"></video>
+            <video src="media/mb_skin_01.mp4" poster="media/mb_skin_01_thumb.jpg" class="creative-img" controls preload="none" ></video>
             <div class="creative-cap">올리디아 소재 · 시술 효과 소구 · 유효DB단가 최저</div>
           </div>
           <div class="creative-item">
-            <video src="media/mb_skin_03.mp4" poster="media/mb_skin_03_thumb.jpg" class="creative-img" controls preload="none" style="object-fit:cover;background:#000;"></video>
+            <video src="media/mb_skin_03.mp4" poster="media/mb_skin_03_thumb.jpg" class="creative-img" controls preload="none" ></video>
             <div class="creative-cap">색소지우개(멜라리티) 소재 · 저단가 신규 상품 발굴 · 대량 DB 확보</div>
           </div>
         </div>
@@ -653,7 +655,7 @@ footer {
       </div>
       <div class="sc-row">
         <span class="sc-label after">AFTER</span>
-        <span class="sc-text">소재교체 32건 전수 분석 — 69% 개선, 평균 −37%(최대 −78%). 재론칭 직후 CPA −23%, 확장기(광고비 ×3.5)에도 CPA −8% 유지. 광고기여매출 월평균 +636% 성장.</span>
+        <span class="sc-text">소재 교체 32건 전수 분석 결과 22건(69%)에서 CPA가 개선됐고, 평균 개선폭은 37%(최대 78%)였습니다. 재론칭 직후 CPA는 23% 감소했고, 확장기(광고비 ×3.5)에도 CPA를 8% 이내 상승으로 유지했습니다. 광고기여매출은 월평균 636% 성장했습니다.</span>
       </div>
     </div>
 
@@ -670,9 +672,9 @@ footer {
         <div class="d-label">A. 소재 교체 효과 (변곡점 기준, 전수 집계)</div>
         <div class="kpi-row">
           <div class="kpi-chip">검증 범위 <b>32건 전수</b></div>
-          <div class="kpi-chip">개선률 <b>22건 (69%)</b></div>
-          <div class="kpi-chip">개선 평균 <b>−37%</b></div>
-          <div class="kpi-chip">최대 개선 <b>−78%</b></div>
+          <div class="kpi-chip">CPA 개선 <b>22건 (69%)</b></div>
+          <div class="kpi-chip">평균 CPA 감소 <b>37%</b></div>
+          <div class="kpi-chip">최대 CPA 감소 <b>78%</b></div>
         </div>
         <p class="d-text" style="margin-top:10px;">단순히 자주 바꾼 게 아니라, 포맷·소구점·모델이라는 축 자체를 바꿔야 같은 상품에서도 CPA가 회복된다는 것을 32건 데이터로 확인했습니다.</p>
       </div>
@@ -701,11 +703,11 @@ footer {
         <p class="d-text">롱래스팅 센터 재론칭 후 제작한 눈썹문신 광고 영상. 기존 소재가 피로해진 시점에 포맷과 소구점을 다른 축으로 바꿔 CPA를 회복시킨 컨셉 전환 소재입니다.</p>
         <div class="creative-grid">
           <div class="creative-item">
-            <video src="media/mb_eyebrow.mp4" poster="media/mb_eyebrow_thumb.jpg" class="creative-img" controls preload="none" style="object-fit:contain;background:#000;height:300px;"></video>
+            <video src="media/mb_eyebrow.mp4" poster="media/mb_eyebrow_thumb.jpg" class="creative-img" controls preload="none" ></video>
             <div class="creative-cap">롱래스팅 눈썹문신 소재 1 · 소재 컨셉 전환 예시</div>
           </div>
           <div class="creative-item">
-            <video src="media/mb_eyebrow_2.mp4" poster="media/mb_eyebrow_2_thumb.jpg" class="creative-img" controls preload="none" style="object-fit:contain;background:#000;height:300px;"></video>
+            <video src="media/mb_eyebrow_2.mp4" poster="media/mb_eyebrow_2_thumb.jpg" class="creative-img" controls preload="none" ></video>
             <div class="creative-cap">롱래스팅 눈썹문신 소재 2 · 모델·소구점 교체 버전</div>
           </div>
         </div>
